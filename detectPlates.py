@@ -3,13 +3,13 @@
 import cv2
 import numpy as np
 import math
-import Main
+import main as Main
 import random
 
-import Preprocess
-import DetectChars
-import PossiblePlate
-import PossibleChar
+import preprocess as Preprocess
+import detectChars as DetectChars
+import possiblePlate as PossiblePlate
+import possibleChar as PossibleChar
 
 # module level variables ##########################################################################
 PLATE_WIDTH_PADDING_FACTOR = 1.3
@@ -130,7 +130,7 @@ def findPossibleCharsInScene(imgThresh):
 
     imgThreshCopy = imgThresh.copy()
 
-    imgContours, contours, npaHierarchy = cv2.findContours(imgThreshCopy, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)   # find all contours
+    contours, npaHierarchy = cv2.findContours(imgThreshCopy, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
 
     height, width = imgThresh.shape
     imgContours = np.zeros((height, width, 3), np.uint8)
