@@ -3,3 +3,5 @@
 
 
     
+## To install:
+     - pip install .
